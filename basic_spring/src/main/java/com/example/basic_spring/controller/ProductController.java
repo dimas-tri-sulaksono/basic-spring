@@ -39,14 +39,14 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
-    @PutMapping("/id")
+    @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product) throws SQLException {
         product.setId(id);
         productService.updateProduct(product);
         return ResponseEntity.ok(product);
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) throws SQLException {
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
