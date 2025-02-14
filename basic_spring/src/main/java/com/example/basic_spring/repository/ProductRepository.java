@@ -7,7 +7,6 @@ import javax.sql.DataSource;
 import java.sql.*;
 import java.util.*;
 
-
 @Repository // buat nandain kalau ini repository
 
 // KONEKSI KE DATABASE MENGUNAKAN JDBC

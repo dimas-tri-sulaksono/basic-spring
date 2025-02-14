@@ -26,11 +26,11 @@ public class ProductController {
     @GetMapping("/{id}") // get data by id
     public ResponseEntity<Product> getProductById(@PathVariable Long id) throws SQLException {
         Product product = productService.findById(id);
+        if (product != null) {
             return ResponseEntity.ok(product);
-//        if (product != null) {
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping // add new product
